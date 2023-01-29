@@ -48,7 +48,21 @@
         // Set chart options
         var options = {'title':'Expenses for December 2022',
           'width':800,
-          'height':700};
+          'height':700,
+          is3D: true,
+          slices: {  
+              0: {offset: 0.05},
+              1: {offset: 0.1},
+              2: {offset: 0.15},
+              3: {offset: 0.2},
+              4: {offset: 0.25},
+              5: {offset: 0.3},
+              6: {offset: 0.25},
+              7: {offset: 0.2},
+              8: {offset: 0.15},
+              9: {offset: 0.1},
+          },
+      };
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
