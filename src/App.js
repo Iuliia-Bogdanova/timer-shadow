@@ -4,6 +4,7 @@ import { Chart } from "react-google-charts";
 function App() {
   return (
     <div className="App">
+      <p>Hello Wolrd!</p>
       <Chart
         chartType="ScatterChart"
         data={[
@@ -15,7 +16,6 @@ function App() {
         height="400px"
         legendToggle
       />
-      <p>Hello Wolrd</p>
     </div>
   );
 }
