@@ -8,20 +8,24 @@
 </head>
 <body>
     <div class="container">
-        <div class="timer">25:00</div>
-        <h1 class="title">Start Countdown...</h1>
+        
+        <h1 class="title">Let's Start Countdown...</h1>
+
+        <input class="timer timer-input" type="number" value="0"></input>
+
+        <div class="timer timer-view"></div>
+
+        <div class="error">
+            <p>error: numbers only</p>
+        </div>
+        
         <div class="buttons">
             <button class="startBtn" style="--clr:#749c9490">Start</button>
             <button class="pauseBtn" style="--clr:#d55b6b80">Pause</button>
-            <button class="resumeBtn" style="--clr:#bcabac90">Resume</button>
             <button class="resetBtn" style="--clr:#A7B1AF95">Reset</button>
-        </div>
-        <div class="pomoCountsDisplay">
-            <span class="count"></span>
-            <p>Pomodoros Completed</p>
         </div>
     </div>
 
-    <script src="./js/script.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
