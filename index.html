@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Pomodoro Timer</title>
+    <title>My Shadow Timer</title>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
@@ -13,7 +13,9 @@
 
         <input class="timer timer-input" type="number" value="0"></input>
 
-        <div class="timer timer-view"></div>
+        <my-element>
+            <div class="timer timer-view" slot="timer-view"></div>
+        </my-element>
 
         <div class="error">
             <p>error: numbers only</p>
