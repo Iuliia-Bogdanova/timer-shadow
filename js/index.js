@@ -46,7 +46,10 @@ const countDown = function() {
         if (seconds > 0 || minutes > 0 || hours > 0) {
         timerInput.value = seconds + minutes * 60 + hours * 3600 - 1;
         } else {
-        clearInterval(interval);
+            clearInterval(interval);
+
+            this.timerView.dispatchEvent(new CustomEvent("endTimer"));
+            console.log("Timer has expired");
         }
     }
 }.bind(this);
@@ -73,16 +76,40 @@ startBtn.addEventListener('click', () => {
 
     this.timerView.style.display = "flex";
     timerInput.style.display = "none";
+
+    const event = new CustomEvent("startTimer");
+    this.timerView.addEventListener("startTimer", handleStartTimer);
+    this.timerView.dispatchEvent(event);
+
+    function handleStartTimer() {
+        console.log("Timer started counting down");
+    }
 });
 
 // pauseBtn
 pauseBtn.addEventListener('click', () => {
     clearInterval(interval);
+
+    const event = new CustomEvent("pauseTimer");
+    this.timerView.addEventListener("pauseTimer", handlePauseTimer);
+    this.timerView.dispatchEvent(event);
+
+    function handlePauseTimer() {
+        console.log("Timer paused");
+    }
 });
 
 // resetBtn - перезагрузка
 resetBtn.addEventListener('click', () => {
     location.reload();
+        
+    const event = new CustomEvent("resetTimer");
+        this.timerView.addEventListener("resetTimer", handleResetTimer);
+        this.timerView.dispatchEvent(event);
+
+        function handleResetTimer() {
+            console.log("Timer reset");
+        }
 });
 
 // зарегистрировала пользовательский элемент

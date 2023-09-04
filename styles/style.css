@@ -43,7 +43,8 @@ input {
     color: inherit;
 }
 
-.timer {
+.timer-input,
+.timer-view {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,11 +63,11 @@ input {
     background-color: rgba(243, 240, 235, .5);
 }
 
-.timer:focus {
+.timer-input:focus {
     border: none;
 }
 
-.timer:hover {
+.timer-input:hover {
     cursor: pointer;
 }
 
